@@ -1,0 +1,421 @@
+{
+  "module_id": "M1",
+  "module_title": "Getting Started with Python",
+  "module_description": "The very basics — what Python is, how to write your first line of code, and how computers think.",
+  "concepts": [
+    {
+      "id": "C01",
+      "title": "What is Python?",
+      "difficulty": 1,
+      "prerequisite_ids": [],
+      "mastery_definition": "Kid can explain what Python is and name one thing it can do",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Python is like a recipe. You write instructions in a language the computer understands, and it follows them exactly — step by step.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of Python like a TV remote. The remote has buttons that tell the TV what to do. Python has commands that tell the computer what to do.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "Python is a language — just like English or Spanish — except instead of talking to people, you use it to talk to computers.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "question": "What does Python do when you write instructions for it?",
+          "options": ["It ignores them", "It follows them step by step", "It deletes them", "It sends them to a friend"],
+          "answer": "It follows them step by step",
+          "explanation": "Python is a programming language — it reads your instructions and follows them exactly, one at a time."
+        },
+        {
+          "type": "explain",
+          "question": "Which of these best describes what Python is?",
+          "options": ["A type of snake", "A language to give instructions to a computer", "A video game", "A math calculator only"],
+          "answer": "A language to give instructions to a computer",
+          "explanation": "Python is a programming language. Just like you use English to talk to people, you use Python to talk to computers."
+        },
+        {
+          "type": "predict",
+          "question": "Who uses Python in real life?",
+          "options": ["Only scientists", "Only kids learning to code", "Game makers, scientists, app builders, and more", "Nobody uses it anymore"],
+          "answer": "Game makers, scientists, app builders, and more",
+          "explanation": "Python is used all over the world — to build websites, games, AI, and even control robots!"
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C02",
+      "title": "The print() function",
+      "difficulty": 1,
+      "prerequisite_ids": ["C01"],
+      "mastery_definition": "Kid can use print() to display text and numbers correctly",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "print() is like a megaphone. Whatever you put inside the megaphone, everyone can hear it — whatever you put inside print(), the computer shows it on screen.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of print() like texting. You type something, hit send, and it appears on the other person's screen. Python's print() sends your message to the screen.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "print() is the computer's way of talking back to you. You tell it something, and it shows it on screen so you can see it.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(\"Hello, World!\")",
+          "question": "What does this code print?",
+          "options": ["hello, world!", "Hello, World!", "Nothing", "Error"],
+          "answer": "Hello, World!",
+          "explanation": "print() shows exactly what's inside the quotes. Capital letters matter — H and W are uppercase here."
+        },
+        {
+          "type": "fill_blank",
+          "code": "_____(\"I love coding!\")",
+          "question": "Fill in the blank to make this code display the message.",
+          "answer": "print",
+          "explanation": "print() is the command that displays text on screen. Always followed by parentheses."
+        },
+        {
+          "type": "fix_bug",
+          "code": "Print(\"Hello\")",
+          "question": "This code has a bug. What is wrong?",
+          "options": ["The word Hello needs to be longer", "print should be lowercase, not Print", "There are no parentheses", "Nothing is wrong"],
+          "answer": "print should be lowercase, not Print",
+          "explanation": "Python is case-sensitive. print() must be all lowercase. Print() with a capital P will cause an error."
+        },
+        {
+          "type": "predict",
+          "code": "print(42)",
+          "question": "What does this print?",
+          "options": ["'42'", "42", "Nothing", "forty-two"],
+          "answer": "42",
+          "explanation": "print() can show numbers too — without quotes. It displays the number 42."
+        },
+        {
+          "type": "write",
+          "question": "Write code that prints your name on the screen.",
+          "sample_answer": "print(\"Aria\")",
+          "check": "contains print(",
+          "explanation": "Use print() with your name inside quotes. Like: print(\"Your Name\")"
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C03",
+      "title": "Variables — storing information",
+      "difficulty": 1,
+      "prerequisite_ids": ["C02"],
+      "mastery_definition": "Kid can create a variable, assign a value, and use it in print()",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "A variable is like a box with a label on it. You put something inside — a number or a word — and any time you need it, you open the box by saying the label.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of a variable like a contact in your phone. 'Mom' stores a number. You don't memorize the digits — you just say 'Mom' and your phone knows.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "A variable is like a name tag. You stick it on something — a number, a word — so you can find it later by its name.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "name = \"Aria\"\nprint(name)",
+          "question": "What does this code print?",
+          "options": ["name", "\"Aria\"", "Aria", "Nothing"],
+          "answer": "Aria",
+          "explanation": "We stored \"Aria\" in a variable called name. When we print(name), Python looks inside the box labeled name and shows what's there."
+        },
+        {
+          "type": "fill_blank",
+          "code": "age = ___\nprint(age)",
+          "question": "Fill in the blank so the variable age stores the number 10.",
+          "answer": "10",
+          "explanation": "To store a number, just write it directly — no quotes needed. age = 10 stores the number 10."
+        },
+        {
+          "type": "fix_bug",
+          "code": "name = \"Sam\"\nprint(Name)",
+          "question": "This code has a bug. Find it.",
+          "options": ["Sam needs quotes", "Name should be name — lowercase", "print is spelled wrong", "No bug here"],
+          "answer": "Name should be name — lowercase",
+          "explanation": "Variable names are case-sensitive. We created name (lowercase) but tried to use Name (uppercase). They're different to Python."
+        },
+        {
+          "type": "predict",
+          "code": "score = 100\nscore = 200\nprint(score)",
+          "question": "What does this print?",
+          "options": ["100", "200", "100 and 200", "Error"],
+          "answer": "200",
+          "explanation": "When you assign a new value to a variable, the old one is replaced. score was 100, then changed to 200. Python shows the latest value."
+        },
+        {
+          "type": "write",
+          "question": "Create a variable called city that stores the name of your favorite city. Then print it.",
+          "sample_answer": "city = \"Chicago\"\nprint(city)",
+          "check": "contains = and print(",
+          "explanation": "First create the variable: city = \"Chicago\". Then display it: print(city)."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C04",
+      "title": "Data types — text (strings)",
+      "difficulty": 1,
+      "prerequisite_ids": ["C03"],
+      "mastery_definition": "Kid knows strings are text, must use quotes, and can create and print a string",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "A string is like a bead necklace — each bead is one letter, and they're all strung together to make a word or sentence.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Strings are just text in quotes. The quotes are like a pair of bookends — they show Python where your text starts and ends.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "Think of a string like a sign you hold up. The quotes are the frame of the sign, and whatever's inside is your message.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "explain",
+          "question": "Which of these is a string in Python?",
+          "options": ["42", "\"Hello\"", "True", "3.14"],
+          "answer": "\"Hello\"",
+          "explanation": "A string is text wrapped in quotes. \"Hello\" has quotes, so it's a string. 42 and 3.14 are numbers. True is a boolean."
+        },
+        {
+          "type": "predict",
+          "code": "greeting = \"Good morning!\"\nprint(greeting)",
+          "question": "What does this print?",
+          "options": ["greeting", "\"Good morning!\"", "Good morning!", "Error"],
+          "answer": "Good morning!",
+          "explanation": "The variable greeting stores the string. print() shows the contents without the quotes."
+        },
+        {
+          "type": "fix_bug",
+          "code": "message = Hello\nprint(message)",
+          "question": "What is wrong with this code?",
+          "options": ["message is a bad variable name", "Hello needs quotes around it", "print is wrong", "Nothing is wrong"],
+          "answer": "Hello needs quotes around it",
+          "explanation": "Text in Python must always be in quotes. Without quotes, Python thinks Hello is a variable name, not text."
+        },
+        {
+          "type": "fill_blank",
+          "code": "food = \"___\"\nprint(food)",
+          "question": "Fill in the blank with your favorite food to complete the string.",
+          "answer": "pizza",
+          "explanation": "Any word goes inside the quotes to make a string. pizza, tacos, sushi — anything works!"
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C05",
+      "title": "Data types — numbers (integers)",
+      "difficulty": 1,
+      "prerequisite_ids": ["C03"],
+      "mastery_definition": "Kid knows integers are whole numbers, no quotes needed, and can do basic math",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Integers are whole numbers — like the score in a game. No decimal points, no fractions. Just solid, complete numbers.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of integers like counting on your fingers. 1, 2, 3 — whole numbers you can count. No halves.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "Integers in Python are just numbers without quotes. If you put quotes, Python thinks it's text, not a number you can do math with.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "x = 5\ny = 3\nprint(x + y)",
+          "question": "What does this print?",
+          "options": ["x + y", "53", "8", "Error"],
+          "answer": "8",
+          "explanation": "x is 5 and y is 3. Python adds them: 5 + 3 = 8. Numbers without quotes can be used in math."
+        },
+        {
+          "type": "predict",
+          "code": "a = \"5\"\nb = \"3\"\nprint(a + b)",
+          "question": "What does this print?",
+          "options": ["8", "53", "\"53\"", "Error"],
+          "answer": "53",
+          "explanation": "When numbers are in quotes, they're strings — not numbers. Adding strings joins them together: \"5\" + \"3\" = \"53\", not 8."
+        },
+        {
+          "type": "fix_bug",
+          "code": "score = \"100\"\nbonus = 50\nprint(score + bonus)",
+          "question": "This code causes an error. Why?",
+          "options": ["bonus is too small", "You can't add a string and a number", "print is wrong", "score needs a bigger number"],
+          "answer": "You can't add a string and a number",
+          "explanation": "score is a string (has quotes) and bonus is an integer. Python can't add them. Fix: score = 100 — remove the quotes."
+        },
+        {
+          "type": "write",
+          "question": "Write code that stores your age in a variable and prints it.",
+          "sample_answer": "age = 11\nprint(age)",
+          "check": "contains = and print(",
+          "explanation": "Store your age without quotes — it's a number. age = 11 then print(age)."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C06",
+      "title": "Getting input from the user",
+      "difficulty": 2,
+      "prerequisite_ids": ["C03","C04"],
+      "mastery_definition": "Kid can use input() to collect a response and store it in a variable",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "input() is like a question box that pops up and waits for you to type something. Whatever you type goes into a variable.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of input() like a form you fill out. The program asks a question, you type your answer, and the program remembers what you said.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "input() pauses the program and listens. It's the program saying 'your turn' — and it waits until you type something and press Enter.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "name = input(\"What is your name? \")\nprint(\"Hello, \" + name)",
+          "question": "If the user types 'Aria', what gets printed?",
+          "options": ["Hello, name", "Hello, Aria", "What is your name?", "Aria"],
+          "answer": "Hello, Aria",
+          "explanation": "input() stores whatever the user typed in the variable name. Then we join \"Hello, \" with the name to print a greeting."
+        },
+        {
+          "type": "fill_blank",
+          "code": "color = _____(\"What is your favorite color? \")\nprint(color)",
+          "question": "Fill in the blank to ask the user for their favorite color.",
+          "answer": "input",
+          "explanation": "input() is the function that asks the user a question and waits for them to type an answer."
+        },
+        {
+          "type": "explain",
+          "question": "What does input() always return?",
+          "options": ["A number", "A list", "A string (text)", "Nothing"],
+          "answer": "A string (text)",
+          "explanation": "input() always gives you text — even if the user types a number like 5, it comes back as the string \"5\", not the number 5."
+        },
+        {
+          "type": "write",
+          "question": "Write code that asks the user for their favorite animal and then prints: 'Cool! I like [animal] too!'",
+          "sample_answer": "animal = input(\"What is your favorite animal? \")\nprint(\"Cool! I like \" + animal + \" too!\")",
+          "check": "contains input( and print(",
+          "explanation": "Get the input, store it, then use it in your print statement joined with the other text."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C07",
+      "title": "Comments — notes in your code",
+      "difficulty": 1,
+      "prerequisite_ids": ["C02"],
+      "mastery_definition": "Kid can write a comment using # and knows Python ignores comments",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Comments are like sticky notes on your code. You write them to remind yourself (or others) what the code does — the computer ignores them completely.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of a comment like whispering to yourself while following a recipe. 'This step is for thickening the sauce' — you're reminding yourself, not giving the recipe a new instruction.",
+          "success_rate": 0
+        },
+        {
+          "id": "A3",
+          "text": "A # starts a comment — like putting text in invisible ink. You can read it, but the computer skips right over it.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "# This prints a greeting\nprint(\"Hello!\")",
+          "question": "What does this code print?",
+          "options": ["This prints a greeting", "Hello!", "Both lines", "Nothing"],
+          "answer": "Hello!",
+          "explanation": "The # line is a comment — Python ignores it. Only print(\"Hello!\") runs."
+        },
+        {
+          "type": "explain",
+          "question": "What is the purpose of comments in code?",
+          "options": ["To make code run faster", "To explain what the code does for humans reading it", "To print messages", "To store data"],
+          "answer": "To explain what the code does for humans reading it",
+          "explanation": "Comments help you and others understand your code. Python ignores them — they're notes for people, not the computer."
+        },
+        {
+          "type": "fill_blank",
+          "code": "___ Ask the user for their name\nname = input(\"Name: \")",
+          "question": "Fill in the blank to make this line a comment.",
+          "answer": "#",
+          "explanation": "The # symbol starts a comment. Everything after # on that line is ignored by Python."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C08",
+      "title": "Mini Project 1 — Personal Greeting Card",
+      "difficulty": 2,
+      "prerequisite_ids": ["C01","C02","C03","C04","C05","C06","C07"],
+      "mastery_definition": "Kid builds a working greeting card program using all M1 concepts",
+      "analogies": [],
+      "questions": [],
+      "mini_project": {
+        "title": "Personal Greeting Card",
+        "description": "Build a program that asks the user their name and age, then prints a personalized greeting card.",
+        "sample_solution": "# Personal Greeting Card\nname = input(\"What is your name? \")\nage = input(\"How old are you? \")\nprint(\"================================\")\nprint(\"Hello, \" + name + \"!\")\nprint(\"Happy \" + age + \"th birthday!\")\nprint(\"Welcome to Python programming!\")\nprint(\"================================\")",
+        "what_they_practice": ["print()", "variables", "input()", "strings", "comments"],
+        "success_criteria": "Program asks for name, asks for age, prints a greeting using both values"
+      }
+    }
+  ]
+}

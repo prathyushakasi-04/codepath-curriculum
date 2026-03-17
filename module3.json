@@ -1,0 +1,310 @@
+{
+  "module_id": "M3",
+  "module_title": "Making Decisions",
+  "module_description": "Teach your program to think — make choices based on conditions.",
+  "concepts": [
+    {
+      "id": "C19",
+      "title": "if statements",
+      "difficulty": 2,
+      "prerequisite_ids": ["C16","C17"],
+      "mastery_definition": "Kid can write an if statement that runs code only when a condition is True",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "An if statement is like a bouncer at a door. If you meet the condition (you're tall enough), you get in. If not, nothing happens.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of if like a fork in the road. Python checks the condition — if it's True, it takes that path. If False, it skips it.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "age = 12\nif age > 10:\n    print(\"You are older than 10!\")",
+          "question": "What does this print?",
+          "options": ["Nothing", "You are older than 10!", "age > 10", "Error"],
+          "answer": "You are older than 10!",
+          "explanation": "age is 12, which is greater than 10 — so the condition is True and the indented code runs."
+        },
+        {
+          "type": "predict",
+          "code": "score = 5\nif score > 10:\n    print(\"High score!\")",
+          "question": "What does this print?",
+          "options": ["High score!", "Nothing", "score > 10", "False"],
+          "answer": "Nothing",
+          "explanation": "score is 5, which is not greater than 10 — condition is False, so the indented code is skipped."
+        },
+        {
+          "type": "fix_bug",
+          "code": "x = 20\nif x > 15\n    print(\"Big number!\")",
+          "question": "This code has a syntax error. Find it.",
+          "options": [
+            "x should be bigger",
+            "Missing colon : at the end of the if line",
+            "print needs quotes around Big number",
+            "The condition is wrong"
+          ],
+          "answer": "Missing colon : at the end of the if line",
+          "explanation": "Every if statement needs a colon : at the end. if x > 15: — the colon tells Python the condition is done."
+        },
+        {
+          "type": "fill_blank",
+          "code": "password = input(\"Password: \")\nif password ___ \"python123\":\n    print(\"Access granted!\")",
+          "question": "Fill in the operator to check if the password matches.",
+          "answer": "==",
+          "explanation": "== checks if two values are equal. We want to check if the entered password matches \"python123\"."
+        },
+        {
+          "type": "write",
+          "question": "Write code that asks for a number and prints 'Positive!' if the number is greater than 0.",
+          "sample_answer": "num = int(input(\"Enter a number: \"))\nif num > 0:\n    print(\"Positive!\")",
+          "check": "contains if and > 0 and print(",
+          "explanation": "Get the number with int(input()), then use if num > 0: to check."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C20",
+      "title": "if / else",
+      "difficulty": 2,
+      "prerequisite_ids": ["C19"],
+      "mastery_definition": "Kid can write if/else and knows exactly one branch always runs",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "if/else is like a coin flip decision. If heads — do this. Else (tails) — do that. One of the two always happens. Never both, never neither.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "temp = 30\nif temp > 25:\n    print(\"It's hot!\")\nelse:\n    print(\"It's cool!\")",
+          "question": "What does this print?",
+          "options": ["It's hot!", "It's cool!", "Both", "Nothing"],
+          "answer": "It's hot!",
+          "explanation": "30 is greater than 25, so the if condition is True. The if branch runs. The else is skipped."
+        },
+        {
+          "type": "predict",
+          "code": "num = 4\nif num % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+          "question": "What does this print?",
+          "options": ["Even", "Odd", "Both", "0"],
+          "answer": "Even",
+          "explanation": "4 % 2 = 0, and 0 == 0 is True — so 4 is even. The if branch prints Even."
+        },
+        {
+          "type": "write",
+          "question": "Write code that asks for a password. If it's 'secret', print 'Welcome!'. Otherwise print 'Wrong password!'",
+          "sample_answer": "pw = input(\"Password: \")\nif pw == \"secret\":\n    print(\"Welcome!\")\nelse:\n    print(\"Wrong password!\")",
+          "check": "contains if and else and print(",
+          "explanation": "Use if pw == \"secret\": for the match, else: for everything else."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C21",
+      "title": "if / elif / else",
+      "difficulty": 3,
+      "prerequisite_ids": ["C20"],
+      "mastery_definition": "Kid can write multi-branch logic with elif and predict which branch runs",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "elif is like a multiple choice question. If A matches — pick A. Elif B matches — pick B. Elif C — pick C. Else — none of the above. Only one answer runs.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "grade = 75\nif grade >= 90:\n    print(\"A\")\nelif grade >= 80:\n    print(\"B\")\nelif grade >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")",
+          "question": "What does this print?",
+          "options": ["A", "B", "C", "F"],
+          "answer": "C",
+          "explanation": "75 is not >= 90, not >= 80, but IS >= 70. So the third branch runs and prints C."
+        },
+        {
+          "type": "fix_bug",
+          "code": "x = 50\nif x > 100:\n    print(\"Big\")\nelse x > 10:\n    print(\"Medium\")\nelse:\n    print(\"Small\")",
+          "question": "What is wrong with this code?",
+          "options": [
+            "The condition x > 10 is wrong",
+            "else cannot have a condition — use elif",
+            "x should be a string",
+            "print is missing quotes"
+          ],
+          "answer": "else cannot have a condition — use elif",
+          "explanation": "else never has a condition. If you want to check another condition, use elif."
+        },
+        {
+          "type": "write",
+          "question": "Ask the user their age. Print 'Child' if under 13, 'Teen' if 13-17, 'Adult' if 18 or older.",
+          "sample_answer": "age = int(input(\"Age: \"))\nif age < 13:\n    print(\"Child\")\nelif age < 18:\n    print(\"Teen\")\nelse:\n    print(\"Adult\")",
+          "check": "contains elif and if and else",
+          "explanation": "Check youngest first: if < 13, elif < 18, else for 18+."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C22",
+      "title": "Logical operators — and, or, not",
+      "difficulty": 3,
+      "prerequisite_ids": ["C16","C19"],
+      "mastery_definition": "Kid can use and/or/not in conditions and predict the boolean result",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "'and' is strict — both things must be true. 'or' is flexible — at least one must be true. 'not' flips it — True becomes False and False becomes True.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "age = 15\nhas_ticket = True\nif age >= 13 and has_ticket:\n    print(\"Enjoy the movie!\")",
+          "question": "What does this print?",
+          "options": ["Enjoy the movie!", "Nothing", "True", "Error"],
+          "answer": "Enjoy the movie!",
+          "explanation": "age >= 13 is True AND has_ticket is True. Both are True so the and condition is True."
+        },
+        {
+          "type": "predict",
+          "code": "raining = False\ncold = True\nif raining or cold:\n    print(\"Bring a jacket!\")",
+          "question": "What does this print?",
+          "options": ["Bring a jacket!", "Nothing", "False", "Error"],
+          "answer": "Bring a jacket!",
+          "explanation": "raining is False but cold is True. With or, just one needs to be True. So the condition is True."
+        },
+        {
+          "type": "predict",
+          "code": "logged_in = False\nprint(not logged_in)",
+          "question": "What does this print?",
+          "options": ["True", "False", "logged_in", "not False"],
+          "answer": "True",
+          "explanation": "not flips the boolean. not False becomes True."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C23",
+      "title": "Nested if statements",
+      "difficulty": 3,
+      "prerequisite_ids": ["C19","C20","C22"],
+      "mastery_definition": "Kid can write an if inside an if and trace which code runs",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Nested ifs are like locked rooms inside locked rooms. First you unlock the outer door (outer if). Only then can you try the inner door (inner if).",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "age = 20\nhas_id = True\nif age >= 18:\n    if has_id:\n        print(\"Entry allowed\")\n    else:\n        print(\"Need ID\")\nelse:\n    print(\"Too young\")",
+          "question": "What does this print?",
+          "options": ["Entry allowed", "Need ID", "Too young", "Nothing"],
+          "answer": "Entry allowed",
+          "explanation": "age is 20 so outer if passes. has_id is True so inner if passes. Prints Entry allowed."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C24",
+      "title": "Indentation rules",
+      "difficulty": 2,
+      "prerequisite_ids": ["C19"],
+      "mastery_definition": "Kid understands that indentation controls which code belongs to which block",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Indentation in Python is like bullet points in an outline. The main point is at the left. Sub-points are indented — they belong to the point above them.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "x = 5\nif x > 3:\n    print(\"Inside if\")\nprint(\"Always prints\")",
+          "question": "What does this print?",
+          "options": ["Inside if only", "Always prints only", "Both lines", "Nothing"],
+          "answer": "Both lines",
+          "explanation": "The indented print is inside the if. The unindented print is outside — it always runs regardless."
+        },
+        {
+          "type": "fix_bug",
+          "code": "if True:\nprint(\"Hello\")",
+          "question": "What is wrong?",
+          "options": [
+            "True should be False",
+            "print needs to be indented",
+            "if needs parentheses",
+            "Nothing is wrong"
+          ],
+          "answer": "print needs to be indented",
+          "explanation": "Code inside an if must be indented with 4 spaces (or one tab). Without indentation Python doesn't know what belongs to the if."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C25",
+      "title": "Truthy and Falsy values",
+      "difficulty": 3,
+      "prerequisite_ids": ["C16","C19"],
+      "mastery_definition": "Kid knows that 0, empty string, and None are falsy in Python conditions",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "In Python, some values act like False without being False. Zero, empty strings, and None are 'falsy' — they fail an if check. Everything else is 'truthy'.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "name = \"\"\nif name:\n    print(\"Name provided\")\nelse:\n    print(\"No name entered\")",
+          "question": "What does this print?",
+          "options": ["Name provided", "No name entered", "Error", "Nothing"],
+          "answer": "No name entered",
+          "explanation": "An empty string \"\" is falsy in Python. The if condition fails, so else runs."
+        },
+        {
+          "type": "predict",
+          "code": "score = 0\nif score:\n    print(\"You scored!\")\nelse:\n    print(\"No score yet\")",
+          "question": "What does this print?",
+          "options": ["You scored!", "No score yet", "0", "Error"],
+          "answer": "No score yet",
+          "explanation": "0 is falsy in Python. Even though score has a value, 0 acts like False in an if statement."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C26",
+      "title": "Mini Project 3 — Quiz Game",
+      "difficulty": 3,
+      "prerequisite_ids": ["C19","C20","C21","C22","C23","C24","C25"],
+      "mastery_definition": "Kid builds a 3-question quiz with score tracking using if/elif/else",
+      "analogies": [],
+      "questions": [],
+      "mini_project": {
+        "title": "Quiz Game",
+        "description": "Build a 3-question quiz. Track the score and give a grade at the end.",
+        "sample_solution": "# Quiz Game\nprint(\"=== Python Quiz ===\")\nscore = 0\n\nanswer1 = input(\"Q1: What symbol starts a comment in Python? \")\nif answer1 == \"#\":\n    print(\"Correct!\")\n    score += 1\nelse:\n    print(\"Wrong! It's #\")\n\nanswer2 = input(\"Q2: What function prints to the screen? \")\nif answer2 == \"print\":\n    print(\"Correct!\")\n    score += 1\nelse:\n    print(\"Wrong! It's print\")\n\nanswer3 = input(\"Q3: What do you use to get user input? \")\nif answer3 == \"input\":\n    print(\"Correct!\")\n    score += 1\nelse:\n    print(\"Wrong! It's input\")\n\nprint(f\"\\nYou got {score}/3!\")\nif score == 3:\n    print(\"Perfect score!\")\nelif score == 2:\n    print(\"Great job!\")\nelse:\n    print(\"Keep practicing!\")",
+        "what_they_practice": ["if/else", "elif", "score tracking", "f-strings", "input()"],
+        "success_criteria": "3 questions, correct answer checking, score total, grade message at end"
+      }
+    }
+  ]
+}

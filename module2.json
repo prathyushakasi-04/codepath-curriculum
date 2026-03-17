@@ -1,0 +1,515 @@
+{
+  "module_id": "M2",
+  "module_title": "Working with Data",
+  "module_description": "Learn how to work with different types of data, do math, and combine text.",
+  "concepts": [
+    {
+      "id": "C09",
+      "title": "Basic math operators",
+      "difficulty": 1,
+      "prerequisite_ids": ["C05"],
+      "mastery_definition": "Kid can use +, -, *, / correctly and predict results",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Python's math operators are the same ones you use in school — plus, minus, times, divide. The only difference: times is * and divide is /.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of operators like the buttons on a calculator. You know how to use a calculator — Python works the same way, just written out.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(10 - 3)",
+          "question": "What does this print?",
+          "options": ["10 - 3", "7", "13", "Error"],
+          "answer": "7",
+          "explanation": "10 minus 3 equals 7. Python does the math and prints the result."
+        },
+        {
+          "type": "predict",
+          "code": "print(4 * 5)",
+          "question": "What does this print?",
+          "options": ["45", "4 * 5", "20", "9"],
+          "answer": "20",
+          "explanation": "* means multiply. 4 times 5 equals 20."
+        },
+        {
+          "type": "predict",
+          "code": "print(15 / 3)",
+          "question": "What does this print?",
+          "options": ["5", "5.0", "15/3", "Error"],
+          "answer": "5.0",
+          "explanation": "/ always gives a decimal result in Python 3. 15 divided by 3 is 5.0 — with the .0 at the end."
+        },
+        {
+          "type": "fill_blank",
+          "code": "print(8 ___ 2)",
+          "question": "Fill in the operator to make this print 16.",
+          "answer": "*",
+          "explanation": "8 times 2 equals 16. The multiply operator is *."
+        },
+        {
+          "type": "write",
+          "question": "Write code that calculates and prints the area of a rectangle with width 6 and height 4.",
+          "sample_answer": "width = 6\nheight = 4\nprint(width * height)",
+          "check": "contains * and print(",
+          "explanation": "Area = width times height. Store both in variables then print(width * height)."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C10",
+      "title": "Integer division and remainder (// and %)",
+      "difficulty": 2,
+      "prerequisite_ids": ["C09"],
+      "mastery_definition": "Kid can use // for whole division and % to find remainders",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "// is like sharing cookies equally — if you have 7 cookies and 2 friends, each gets 3 (7 // 2 = 3). The leftover cookies? That's the % — the remainder. 7 % 2 = 1 leftover cookie.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of // as 'how many times does it fit completely?' and % as 'what's left over?' — like fitting boxes into a truck and counting what doesn't fit.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(10 // 3)",
+          "question": "What does this print?",
+          "options": ["3.33", "3", "1", "4"],
+          "answer": "3",
+          "explanation": "// gives only the whole number part. 10 divided by 3 is 3 remainder 1 — // gives just 3."
+        },
+        {
+          "type": "predict",
+          "code": "print(10 % 3)",
+          "question": "What does this print?",
+          "options": ["3", "3.33", "1", "0"],
+          "answer": "1",
+          "explanation": "% gives the remainder. 10 divided by 3 is 3 with 1 left over. So 10 % 3 = 1."
+        },
+        {
+          "type": "explain",
+          "question": "What is 14 % 2?",
+          "options": ["7", "0", "2", "1"],
+          "answer": "0",
+          "explanation": "14 divided by 2 is exactly 7 with nothing left over. So the remainder is 0. This means 14 is even!"
+        },
+        {
+          "type": "write",
+          "question": "Write code that checks if 15 is odd or even by printing the remainder when divided by 2.",
+          "sample_answer": "print(15 % 2)",
+          "check": "contains % and 2",
+          "explanation": "15 % 2 gives the remainder. If it's 0, the number is even. If it's 1, the number is odd."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C11",
+      "title": "String concatenation — joining text",
+      "difficulty": 2,
+      "prerequisite_ids": ["C04","C06"],
+      "mastery_definition": "Kid can join strings using + and knows quotes vs variables",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Concatenation is just a fancy word for joining. Like connecting train cars — each car is a string, and + is the connector that links them into one long train.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of + with strings like glue. You glue \"Hello, \" and \"World!\" together and get \"Hello, World!\" — no space between unless you put one.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(\"Hello\" + \"World\")",
+          "question": "What does this print?",
+          "options": ["Hello World", "HelloWorld", "Hello + World", "Error"],
+          "answer": "HelloWorld",
+          "explanation": "Strings join without any space unless you add one. \"Hello\" + \"World\" = \"HelloWorld\"."
+        },
+        {
+          "type": "fix_bug",
+          "code": "name = \"Aria\"\nprint(\"Hello \" + name + \" how are you\")",
+          "question": "The greeting is missing punctuation. Which fix adds an exclamation at the end?",
+          "options": [
+            "print(\"Hello \" + name + \" how are you!\")",
+            "print(\"Hello \" + name! + \" how are you\")",
+            "print!(\"Hello \" + name + \" how are you\")",
+            "name = name + \"!\""
+          ],
+          "answer": "print(\"Hello \" + name + \" how are you!\")",
+          "explanation": "Add the ! inside the last string before the closing quote."
+        },
+        {
+          "type": "predict",
+          "code": "first = \"Python\"\nsecond = \" is fun!\"\nprint(first + second)",
+          "question": "What does this print?",
+          "options": ["Python is fun!", "Pythonis fun!", "first + second", "Error"],
+          "answer": "Python is fun!",
+          "explanation": "second starts with a space — so when joined, there's a space between Python and is."
+        },
+        {
+          "type": "write",
+          "question": "Ask the user for their first and last name separately. Then print their full name joined together.",
+          "sample_answer": "first = input(\"First name: \")\nlast = input(\"Last name: \")\nprint(first + \" \" + last)",
+          "check": "contains input( and +",
+          "explanation": "Get two inputs, then join them with a space in between: first + \" \" + last."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C12",
+      "title": "Data types — floats (decimal numbers)",
+      "difficulty": 2,
+      "prerequisite_ids": ["C05","C09"],
+      "mastery_definition": "Kid knows floats are decimal numbers and can do basic float math",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Floats are numbers with a decimal point — like prices at a store. $3.99, $12.50 — those are floats. Whole numbers like 5 or 100 are integers.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of a float as a number that can be split. An integer is a whole pizza. A float is 2.5 pizzas — it has a fraction.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "explain",
+          "question": "Which of these is a float?",
+          "options": ["42", "\"3.14\"", "3.14", "True"],
+          "answer": "3.14",
+          "explanation": "3.14 has a decimal point — it's a float. 42 is an integer. \"3.14\" in quotes is a string."
+        },
+        {
+          "type": "predict",
+          "code": "price = 4.99\ntax = 0.50\nprint(price + tax)",
+          "question": "What does this print?",
+          "options": ["4.99 + 0.50", "5.49", "5.5", "4.9950"],
+          "answer": "5.49",
+          "explanation": "4.99 plus 0.50 equals 5.49. Python adds floats just like a calculator."
+        },
+        {
+          "type": "write",
+          "question": "Write code that calculates and prints the average of 7.5 and 8.5.",
+          "sample_answer": "print((7.5 + 8.5) / 2)",
+          "check": "contains / and print(",
+          "explanation": "Average = sum divided by count. (7.5 + 8.5) / 2 = 8.0."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C13",
+      "title": "Type conversion — int(), float(), str()",
+      "difficulty": 2,
+      "prerequisite_ids": ["C04","C05","C06","C12"],
+      "mastery_definition": "Kid can convert between types and knows why it is needed with input()",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Type conversion is like changing currency. $5 and 5 euros are both 5, but you can't spend euros in a US store. You need to convert. Python needs the right type for each job.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of it like translating. input() always gives you text — like getting a letter in French. If you need a number, you have to translate it with int() or float().",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "age = input(\"Your age: \")\nprint(age + 1)",
+          "question": "If the user types 10, what happens?",
+          "options": ["Prints 11", "Prints 101", "Error", "Prints 10"],
+          "answer": "Error",
+          "explanation": "input() gives a string, not a number. You can't add 1 to a string. Fix: age = int(input(\"Your age: \"))"
+        },
+        {
+          "type": "fix_bug",
+          "code": "num = input(\"Enter a number: \")\nprint(num * 2)",
+          "question": "Fix this code so it actually doubles the number.",
+          "options": [
+            "num = int(input(\"Enter a number: \"))\nprint(num * 2)",
+            "num = input(\"Enter a number: \")\nprint(int(num * 2))",
+            "num = input(\"Enter a number: \")\nprint(num + num)",
+            "print(input(\"Enter a number: \") * 2)"
+          ],
+          "answer": "num = int(input(\"Enter a number: \"))\nprint(num * 2)",
+          "explanation": "Wrap input() with int() to convert the text to a number first, then multiply."
+        },
+        {
+          "type": "fill_blank",
+          "code": "price = _____(input(\"Price: \"))\ntax = price * 0.1\nprint(price + tax)",
+          "question": "Fill in the blank to convert the input to a decimal number.",
+          "answer": "float",
+          "explanation": "float() converts text to a decimal number. Use float() when you need decimals, int() for whole numbers."
+        },
+        {
+          "type": "write",
+          "question": "Write a program that asks for a number and prints double that number.",
+          "sample_answer": "num = int(input(\"Enter a number: \"))\nprint(num * 2)",
+          "check": "contains int(input( and * 2",
+          "explanation": "Convert input to int first, then multiply by 2."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C14",
+      "title": "String methods — upper(), lower(), len()",
+      "difficulty": 2,
+      "prerequisite_ids": ["C04","C11"],
+      "mastery_definition": "Kid can apply upper(), lower(), and len() to strings and predict results",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "String methods are tools you attach to your string. Like a filter on a photo — .upper() makes everything CAPS, .lower() makes everything small, len() counts the letters.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of methods like apps on your phone. The string is your phone, and .upper(), .lower(), and len() are apps that do something with it.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "name = \"aria\"\nprint(name.upper())",
+          "question": "What does this print?",
+          "options": ["aria", "Aria", "ARIA", "upper"],
+          "answer": "ARIA",
+          "explanation": ".upper() converts every letter to uppercase."
+        },
+        {
+          "type": "predict",
+          "code": "word = \"PYTHON\"\nprint(word.lower())",
+          "question": "What does this print?",
+          "options": ["PYTHON", "Python", "python", "lower"],
+          "answer": "python",
+          "explanation": ".lower() converts every letter to lowercase."
+        },
+        {
+          "type": "predict",
+          "code": "print(len(\"Hello\"))",
+          "question": "What does this print?",
+          "options": ["Hello", "5", "6", "4"],
+          "answer": "5",
+          "explanation": "len() counts the characters in a string. H-e-l-l-o = 5 characters."
+        },
+        {
+          "type": "write",
+          "question": "Ask the user for their name. Print it in ALL CAPS and also print how many letters it has.",
+          "sample_answer": "name = input(\"Your name: \")\nprint(name.upper())\nprint(len(name))",
+          "check": "contains .upper() and len(",
+          "explanation": "Use .upper() to capitalize and len() to count the letters."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C15",
+      "title": "f-strings — easier string formatting",
+      "difficulty": 2,
+      "prerequisite_ids": ["C04","C11","C13"],
+      "mastery_definition": "Kid can write an f-string with at least one variable inserted",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "f-strings are like Mad Libs. You have a sentence with blank spaces, and the variables fill in the blanks automatically. Much easier than gluing strings with +.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of an f-string like a template letter. 'Dear {name},' — you write the template once and Python fills in the name for you.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "name = \"Aria\"\nage = 11\nprint(f\"My name is {name} and I am {age} years old.\")",
+          "question": "What does this print?",
+          "options": [
+            "My name is {name} and I am {age} years old.",
+            "My name is Aria and I am 11 years old.",
+            "My name is name and I am age years old.",
+            "Error"
+          ],
+          "answer": "My name is Aria and I am 11 years old.",
+          "explanation": "In an f-string, {name} gets replaced by the value of the variable name, and {age} by the value of age."
+        },
+        {
+          "type": "fill_blank",
+          "code": "city = \"Chicago\"\nprint(___\"I live in {city}!\")",
+          "question": "Fill in the blank to make this an f-string.",
+          "answer": "f",
+          "explanation": "Put f before the opening quote to make it an f-string. Then {city} automatically fills in the variable's value."
+        },
+        {
+          "type": "fix_bug",
+          "code": "score = 95\nprint(f\"You scored score points!\")",
+          "question": "The variable score isn't showing. Fix the f-string.",
+          "options": [
+            "print(f\"You scored {score} points!\")",
+            "print(\"You scored {score} points!\")",
+            "print(f'You scored score! points')",
+            "print(f\"You scored\" + score + \"points!\")"
+          ],
+          "answer": "print(f\"You scored {score} points!\")",
+          "explanation": "Variables in f-strings must be inside curly braces {}. Without {}, Python treats it as plain text."
+        },
+        {
+          "type": "write",
+          "question": "Ask the user for their name and favorite number. Print: 'Hi [name]! Your lucky number is [number]!'",
+          "sample_answer": "name = input(\"Name: \")\nnumber = input(\"Favorite number: \")\nprint(f\"Hi {name}! Your lucky number is {number}!\")",
+          "check": "contains f\" and {",
+          "explanation": "Use an f-string with {name} and {number} inside curly braces."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C16",
+      "title": "Data types — booleans (True/False)",
+      "difficulty": 2,
+      "prerequisite_ids": ["C04","C05"],
+      "mastery_definition": "Kid knows True and False are a data type and knows comparison operators return booleans",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Booleans are like a light switch — only two positions: True (on) or False (off). Every yes/no question in Python gets a boolean answer.",
+          "success_rate": 0
+        },
+        {
+          "id": "A2",
+          "text": "Think of booleans like a referee's decision. Either it's in bounds (True) or out of bounds (False). No maybe.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(5 > 3)",
+          "question": "What does this print?",
+          "options": ["5 > 3", "True", "False", "Error"],
+          "answer": "True",
+          "explanation": "5 is greater than 3 — that's true! Python prints True. Comparison operators return True or False."
+        },
+        {
+          "type": "predict",
+          "code": "print(10 == 5 + 5)",
+          "question": "What does this print?",
+          "options": ["True", "False", "10", "Error"],
+          "answer": "True",
+          "explanation": "5 + 5 = 10, and 10 == 10 is True. Note: == means 'is equal to', not = which assigns a value."
+        },
+        {
+          "type": "fix_bug",
+          "code": "print(4 = 4)",
+          "question": "This code has an error. What is wrong?",
+          "options": [
+            "4 is not equal to 4",
+            "Use == for comparison, not =",
+            "print cannot compare numbers",
+            "Nothing is wrong"
+          ],
+          "answer": "Use == for comparison, not =",
+          "explanation": "= assigns a value. == checks if two things are equal. To compare, always use ==."
+        },
+        {
+          "type": "predict",
+          "code": "x = 7\nprint(x != 10)",
+          "question": "What does this print?",
+          "options": ["True", "False", "7", "Error"],
+          "answer": "True",
+          "explanation": "!= means 'not equal to'. 7 is not equal to 10, so the answer is True."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C17",
+      "title": "Comparison operators (>, <, >=, <=, ==, !=)",
+      "difficulty": 2,
+      "prerequisite_ids": ["C16"],
+      "mastery_definition": "Kid can correctly use all 6 comparison operators and predict True/False results",
+      "analogies": [
+        {
+          "id": "A1",
+          "text": "Comparison operators are just like math class — greater than, less than — with two extras: >= means 'at least as big as' and != means 'not the same as'.",
+          "success_rate": 0
+        }
+      ],
+      "questions": [
+        {
+          "type": "predict",
+          "code": "print(10 >= 10)",
+          "question": "What does this print?",
+          "options": ["True", "False", "10", "Error"],
+          "answer": "True",
+          "explanation": ">= means 'greater than OR equal to'. 10 is equal to 10, so this is True."
+        },
+        {
+          "type": "predict",
+          "code": "print(3 <= 2)",
+          "question": "What does this print?",
+          "options": ["True", "False", "3", "Error"],
+          "answer": "False",
+          "explanation": "3 is not less than or equal to 2. 3 is bigger than 2. So this is False."
+        },
+        {
+          "type": "fill_blank",
+          "code": "print(5 ___ 5)",
+          "question": "Fill in the operator to make this print True (checking if they are equal).",
+          "answer": "==",
+          "explanation": "== checks equality. 5 == 5 is True."
+        },
+        {
+          "type": "write",
+          "question": "Ask the user for their age. Print True if they are 13 or older, False if not.",
+          "sample_answer": "age = int(input(\"Your age: \"))\nprint(age >= 13)",
+          "check": "contains >= and int(input(",
+          "explanation": "Convert the input to int, then compare using >= 13."
+        }
+      ],
+      "mini_project": null
+    },
+    {
+      "id": "C18",
+      "title": "Mini Project 2 — Simple Calculator",
+      "difficulty": 3,
+      "prerequisite_ids": ["C09","C10","C11","C12","C13","C14","C15","C16","C17"],
+      "mastery_definition": "Kid builds a calculator that takes two numbers and shows results of all operations",
+      "analogies": [],
+      "questions": [],
+      "mini_project": {
+        "title": "Simple Calculator",
+        "description": "Build a calculator that asks for two numbers and shows the result of adding, subtracting, multiplying, and dividing them.",
+        "sample_solution": "# Simple Calculator\nnum1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second number: \"))\n\nprint(f\"\\n--- Calculator Results ---\")\nprint(f\"{num1} + {num2} = {num1 + num2}\")\nprint(f\"{num1} - {num2} = {num1 - num2}\")\nprint(f\"{num1} * {num2} = {num1 * num2}\")\nprint(f\"{num1} / {num2} = {num1 / num2}\")\nprint(f\"{num1} % {num2} = {num1 % num2} (remainder)\")",
+        "what_they_practice": ["float()", "input()", "math operators", "f-strings", "type conversion"],
+        "success_criteria": "Program takes two numbers and correctly displays results of at least 4 operations"
+      }
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "modules": [
+    {
+      "module_id": "M4",
+      "module_title": "Loops and Repetition",
+      "concepts": [
+        {
+          "id": "C27",
+          "title": "while loops",
+          "difficulty": 3,
+          "prerequisite_ids": ["C19","C20"],
+          "mastery_definition": "Kid can write a while loop that runs until a condition becomes False",
+          "analogies": [
+            {"id":"A1","text":"A while loop is like a song on repeat. It keeps playing while you haven't pressed stop. The condition is your stop button — when it's False, the loop ends.","success_rate":0},
+            {"id":"A2","text":"Think of while like brushing your teeth. While there's still toothpaste on the brush, keep brushing. When it runs out — stop.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"count = 1\nwhile count <= 3:\n    print(count)\n    count += 1","question":"What does this print?","options":["1 2 3","1 2 3 4","0 1 2 3","Runs forever"],"answer":"1 2 3","explanation":"Starts at 1, prints it, adds 1. Repeats while count <= 3. When count hits 4 the loop stops."},
+            {"type":"fix_bug","code":"x = 0\nwhile x < 5:\n    print(x)","question":"This loop runs forever. What is missing?","options":["The condition is wrong","x is never increased — add x += 1","print is wrong","while needs a colon"],"answer":"x is never increased — add x += 1","explanation":"Without incrementing x, the condition x < 5 is always True — infinite loop. Always make sure your loop variable changes."},
+            {"type":"write","question":"Write a while loop that counts down from 5 to 1 and then prints 'Blast off!'","sample_answer":"n = 5\nwhile n >= 1:\n    print(n)\n    n -= 1\nprint(\"Blast off!\")","check":"contains while and n -= 1","explanation":"Start at 5, print, subtract 1, repeat while >= 1. After loop prints Blast off!"}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C28",
+          "title": "for loops with range()",
+          "difficulty": 3,
+          "prerequisite_ids": ["C27"],
+          "mastery_definition": "Kid can use for i in range() with 1, 2, and 3 argument versions",
+          "analogies": [
+            {"id":"A1","text":"range() is like a ticket dispenser. range(5) gives you tickets numbered 0,1,2,3,4. The for loop processes each ticket one at a time.","success_rate":0},
+            {"id":"A2","text":"Think of for i in range(5) like passing out papers to 5 students. i is each student in turn — 0, 1, 2, 3, 4.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"for i in range(4):\n    print(i)","question":"What does this print?","options":["0 1 2 3","1 2 3 4","0 1 2 3 4","1 2 3"],"answer":"0 1 2 3","explanation":"range(4) gives 0,1,2,3 — always starts at 0, goes up to but not including 4."},
+            {"type":"predict","code":"for i in range(2, 6):\n    print(i)","question":"What does this print?","options":["2 3 4 5","2 3 4 5 6","0 1 2 3 4 5","2 6"],"answer":"2 3 4 5","explanation":"range(2,6) starts at 2 and goes up to but not including 6."},
+            {"type":"predict","code":"for i in range(0, 10, 2):\n    print(i)","question":"What does this print?","options":["0 2 4 6 8","0 2 4 6 8 10","2 4 6 8 10","0 1 2 3"],"answer":"0 2 4 6 8","explanation":"range(0,10,2) starts at 0, goes to 10 (not including), steps by 2."},
+            {"type":"write","question":"Write a for loop that prints the 5 times table (5, 10, 15, 20, 25).","sample_answer":"for i in range(1, 6):\n    print(i * 5)","check":"contains for and range( and * 5","explanation":"for i in range(1,6) gives 1-5. Multiply each by 5."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C29",
+          "title": "for loops with strings and lists",
+          "difficulty": 3,
+          "prerequisite_ids": ["C28"],
+          "mastery_definition": "Kid can iterate over a string and a list using for",
+          "analogies": [
+            {"id":"A1","text":"Looping over a string is like reading a word letter by letter. The for loop picks up each letter one at a time and does something with it.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"for letter in \"Hi!\":\n    print(letter)","question":"What does this print?","options":["Hi!","H i !","H\ni\n!","Error"],"answer":"H\ni\n!","explanation":"The for loop goes through each character in the string one at a time, printing each on its own line."},
+            {"type":"predict","code":"fruits = [\"apple\",\"banana\",\"cherry\"]\nfor fruit in fruits:\n    print(fruit)","question":"What does this print?","options":["apple banana cherry","[apple,banana,cherry]","apple\nbanana\ncherry","Error"],"answer":"apple\nbanana\ncherry","explanation":"The loop goes through each item in the list, printing one per line."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C30",
+          "title": "break and continue",
+          "difficulty": 3,
+          "prerequisite_ids": ["C27","C28"],
+          "mastery_definition": "Kid knows break exits a loop and continue skips to next iteration",
+          "analogies": [
+            {"id":"A1","text":"break is the emergency exit — it stops the loop immediately. continue is like skipping a song — it jumps to the next round without finishing the current one.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"for i in range(5):\n    if i == 3:\n        break\n    print(i)","question":"What does this print?","options":["0 1 2 3 4","0 1 2","0 1 2 3","Nothing"],"answer":"0 1 2","explanation":"When i hits 3, break stops the loop. So we only see 0, 1, 2."},
+            {"type":"predict","code":"for i in range(5):\n    if i == 3:\n        continue\n    print(i)","question":"What does this print?","options":["0 1 2 3 4","0 1 2 4","0 1 2","Nothing"],"answer":"0 1 2 4","explanation":"continue skips just the number 3 and moves to 4. The loop continues but skips printing when i is 3."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C31",
+          "title": "Nested loops",
+          "difficulty": 4,
+          "prerequisite_ids": ["C28"],
+          "mastery_definition": "Kid can write a loop inside a loop and predict the total number of iterations",
+          "analogies": [
+            {"id":"A1","text":"Nested loops are like a clock. The outer loop is the hour hand (moves slowly). The inner loop is the minute hand (completes a full cycle for every outer step).","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"for i in range(3):\n    for j in range(2):\n        print(i, j)","question":"How many lines does this print?","options":["3","2","6","5"],"answer":"6","explanation":"Outer runs 3 times. Each time, inner runs 2 times. 3 × 2 = 6 lines total."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C32",
+          "title": "Accumulator pattern",
+          "difficulty": 3,
+          "prerequisite_ids": ["C27","C28"],
+          "mastery_definition": "Kid can use a running total variable to sum values inside a loop",
+          "analogies": [
+            {"id":"A1","text":"The accumulator is like a piggy bank. Each time through the loop you drop in a coin. At the end you count what's in the bank.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)","question":"What does this print?","options":["10","4","15","1 2 3 4"],"answer":"10","explanation":"1+2+3+4 = 10. total starts at 0 and each number is added to it."},
+            {"type":"write","question":"Write code that asks the user for 3 numbers one at a time and prints their sum.","sample_answer":"total = 0\nfor i in range(3):\n    num = int(input(\"Enter number: \"))\n    total += num\nprint(total)","check":"contains total and += and range(3)","explanation":"Use a total variable starting at 0, add each input to it inside the loop."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C33",
+          "title": "while with user input (input validation)",
+          "difficulty": 4,
+          "prerequisite_ids": ["C27","C06","C13"],
+          "mastery_definition": "Kid can write a loop that keeps asking until valid input is given",
+          "analogies": [
+            {"id":"A1","text":"Input validation is like a vending machine that keeps asking you to insert coins until you put in enough. It won't proceed until the condition is met.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"answer = \"\"\nwhile answer != \"yes\":\n    answer = input(\"Type yes to continue: \")\nprint(\"Thank you!\")","question":"When does 'Thank you!' print?","options":["Immediately","Never","Only when user types 'yes'","After 3 tries"],"answer":"Only when user types 'yes'","explanation":"The loop keeps running until the user types exactly 'yes'. Only then does it exit and print Thank you!"}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C34",
+          "title": "Mini Project 4 — Number Guessing Game",
+          "difficulty": 4,
+          "prerequisite_ids": ["C27","C28","C29","C30","C31","C32","C33"],
+          "mastery_definition": "Kid builds a number guessing game with hint feedback and attempt counter",
+          "analogies": [],
+          "questions": [],
+          "mini_project": {
+            "title": "Number Guessing Game",
+            "description": "The computer picks a secret number (1-100). The player guesses until they get it. Print 'Too high' or 'Too low' as hints. Count the attempts.",
+            "sample_solution": "import random\nsecret = random.randint(1, 100)\nattempts = 0\n\nprint(\"I'm thinking of a number between 1 and 100!\")\n\nwhile True:\n    guess = int(input(\"Your guess: \"))\n    attempts += 1\n    if guess < secret:\n        print(\"Too low!\")\n    elif guess > secret:\n        print(\"Too high!\")\n    else:\n        print(f\"Correct! You got it in {attempts} attempts!\")\n        break",
+            "what_they_practice":["while loop","break","if/elif/else","accumulator","random module"],
+            "success_criteria":"Game gives hints, counts attempts, ends correctly when guessed"
+          }
+        }
+      ]
+    },
+    {
+      "module_id": "M5",
+      "module_title": "Functions",
+      "concepts": [
+        {
+          "id": "C35",
+          "title": "What is a function?",
+          "difficulty": 3,
+          "prerequisite_ids": ["C19","C27"],
+          "mastery_definition": "Kid can explain what a function is and why we use them",
+          "analogies": [
+            {"id":"A1","text":"A function is like a vending machine. You press a button (call the function), it does its thing, and gives you something back. You don't need to know how it works inside.","success_rate":0},
+            {"id":"A2","text":"Think of a function like a TV remote button. The MUTE button always does the same thing — mutes the TV. You don't rewire the TV each time. You just press MUTE.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"explain","question":"Why do we use functions in programming?","options":["To make code shorter only","To reuse code without rewriting it","To slow down the program","To make variables"],"answer":"To reuse code without rewriting it","explanation":"Functions let you write code once and use it many times. Instead of copying the same 10 lines everywhere, you call the function."},
+            {"type":"predict","code":"def say_hello():\n    print(\"Hello!\")\n\nsay_hello()\nsay_hello()","question":"What does this print?","options":["Hello!","Hello!\nHello!","Nothing","Error"],"answer":"Hello!\nHello!","explanation":"The function is defined once but called twice. Each call runs the code inside — so Hello! prints twice."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C36",
+          "title": "Defining and calling functions",
+          "difficulty": 3,
+          "prerequisite_ids": ["C35"],
+          "mastery_definition": "Kid can define a function with def and call it correctly",
+          "analogies": [
+            {"id":"A1","text":"def is like writing a recipe. You write the recipe once (define). Calling the function is like actually cooking it — following the steps.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"fix_bug","code":"def greet():\n    print(\"Hi there!\")\n\ngreet","question":"This doesn't call the function. What is missing?","options":["def is wrong","greet needs parentheses: greet()","print is inside the function","Nothing is wrong"],"answer":"greet needs parentheses: greet()","explanation":"To call a function you need parentheses after the name. greet without () just references the function — it doesn't run it."},
+            {"type":"fill_blank","code":"___ welcome():\n    print(\"Welcome to CodePath!\")\n\nwelcome()","question":"Fill in the keyword to define the function.","answer":"def","explanation":"def is the keyword that tells Python you're defining a new function."},
+            {"type":"write","question":"Define a function called celebrate that prints '🎉 You did it!' Then call it 3 times.","sample_answer":"def celebrate():\n    print(\"You did it!\")\n\ncelebrate()\ncelebrate()\ncelebrate()","check":"contains def celebrate and celebrate()","explanation":"Define with def celebrate(): and body indented. Call it three times: celebrate()"}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C37",
+          "title": "Function parameters",
+          "difficulty": 3,
+          "prerequisite_ids": ["C36"],
+          "mastery_definition": "Kid can define a function with one or more parameters and call it with arguments",
+          "analogies": [
+            {"id":"A1","text":"Parameters are like the slots in a toaster. You define the slots (parameters). When you use the toaster (call the function), you put in the bread (arguments).","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"def greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Aria\")\ngreet(\"Sam\")","question":"What does this print?","options":["Hello, name!\nHello, name!","Hello, Aria!\nHello, Sam!","Error","Aria\nSam"],"answer":"Hello, Aria!\nHello, Sam!","explanation":"Each call passes a different name. The function uses whatever was passed in as name."},
+            {"type":"fix_bug","code":"def add(a, b):\n    print(a + b)\n\nadd(5)","question":"This causes an error. Why?","options":["add is a bad function name","The function needs 2 arguments but only 1 was given","print is inside the function","5 should be a string"],"answer":"The function needs 2 arguments but only 1 was given","explanation":"add(a, b) needs two values. Calling add(5) only gives one. Fix: add(5, 3)"},
+            {"type":"write","question":"Write a function called multiply that takes two numbers and prints their product.","sample_answer":"def multiply(a, b):\n    print(a * b)\n\nmultiply(4, 5)","check":"contains def multiply and a * b","explanation":"Define with two parameters, print their product inside, call with two numbers."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C38",
+          "title": "Return values",
+          "difficulty": 4,
+          "prerequisite_ids": ["C37"],
+          "mastery_definition": "Kid can write a function that returns a value and use that value",
+          "analogies": [
+            {"id":"A1","text":"return is like a function handing you back a result. A calculator doesn't just show the answer — it gives it back to you to use however you want.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"def square(n):\n    return n * n\n\nresult = square(4)\nprint(result)","question":"What does this print?","options":["n * n","4","16","Error"],"answer":"16","explanation":"square(4) returns 4*4=16. That value is stored in result. print(result) shows 16."},
+            {"type":"predict","code":"def add(a, b):\n    return a + b\n\nprint(add(3, 4) + add(1, 2))","question":"What does this print?","options":["10","3 4 1 2","7 3","Error"],"answer":"10","explanation":"add(3,4) returns 7. add(1,2) returns 3. 7+3=10."},
+            {"type":"fill_blank","code":"def get_greeting(name):\n    ___ f\"Hello, {name}!\"\n\nmessage = get_greeting(\"Aria\")\nprint(message)","question":"Fill in the blank to send the greeting back to the caller.","answer":"return","explanation":"return sends a value back from the function to wherever it was called."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C39",
+          "title": "Default parameters",
+          "difficulty": 4,
+          "prerequisite_ids": ["C37","C38"],
+          "mastery_definition": "Kid can define a function with default parameter values",
+          "analogies": [
+            {"id":"A1","text":"Default parameters are like a coffee order. 'I'll have a coffee' — the barista assumes medium size unless you say otherwise. The default is medium.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"def greet(name, greeting=\"Hello\"):\n    print(f\"{greeting}, {name}!\")\n\ngreet(\"Aria\")\ngreet(\"Sam\", \"Hi\")","question":"What does this print?","options":["Hello, Aria!\nHello, Sam!","Hello, Aria!\nHi, Sam!","Error","greeting, name!"],"answer":"Hello, Aria!\nHi, Sam!","explanation":"First call uses default greeting 'Hello'. Second call overrides it with 'Hi'."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C40",
+          "title": "Variable scope — local vs global",
+          "difficulty": 4,
+          "prerequisite_ids": ["C36","C37"],
+          "mastery_definition": "Kid understands variables inside functions are local and can't be used outside",
+          "analogies": [
+            {"id":"A1","text":"Scope is like what happens in a room, stays in the room. Variables created inside a function are local — they exist only while that function runs. Outside, they're gone.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"def my_func():\n    x = 10\n\nmy_func()\nprint(x)","question":"What does this print?","options":["10","Nothing","Error","0"],"answer":"Error","explanation":"x was created inside my_func — it's a local variable. Outside the function, x doesn't exist. This causes a NameError."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C41",
+          "title": "Functions calling other functions",
+          "difficulty": 4,
+          "prerequisite_ids": ["C38","C40"],
+          "mastery_definition": "Kid can write a function that calls another function and trace the execution",
+          "analogies": [
+            {"id":"A1","text":"Functions calling functions is like a manager delegating. The manager (outer function) doesn't do everything themselves — they call the specialist (inner function) to handle parts of the job.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"def double(n):\n    return n * 2\n\ndef quadruple(n):\n    return double(double(n))\n\nprint(quadruple(3))","question":"What does this print?","options":["6","12","3","Error"],"answer":"12","explanation":"quadruple(3) calls double(3)=6, then double(6)=12. Final answer: 12."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C42",
+          "title": "Mini Project 5 — Tip Calculator",
+          "difficulty": 4,
+          "prerequisite_ids": ["C35","C36","C37","C38","C39","C40","C41"],
+          "mastery_definition": "Kid builds a tip calculator using functions for each calculation",
+          "analogies": [],
+          "questions": [],
+          "mini_project": {
+            "title": "Tip Calculator",
+            "description": "Build a restaurant tip calculator. Use separate functions to calculate tip, total, and split the bill.",
+            "sample_solution": "def calculate_tip(bill, tip_percent):\n    return bill * (tip_percent / 100)\n\ndef calculate_total(bill, tip):\n    return bill + tip\n\ndef split_bill(total, people):\n    return total / people\n\nbill = float(input(\"Bill amount: $\"))\ntip_pct = float(input(\"Tip percentage: \"))\npeople = int(input(\"Number of people: \"))\n\ntip = calculate_tip(bill, tip_pct)\ntotal = calculate_total(bill, tip)\nper_person = split_bill(total, people)\n\nprint(f\"\\nTip: ${tip:.2f}\")\nprint(f\"Total: ${total:.2f}\")\nprint(f\"Per person: ${per_person:.2f}\")",
+            "what_they_practice":["functions","parameters","return values","float formatting","composition"],
+            "success_criteria":"Separate functions for tip, total, and split. All calculations correct. Clean output."
+          }
+        }
+      ]
+    },
+    {
+      "module_id": "M6",
+      "module_title": "Lists and Collections",
+      "concepts": [
+        {
+          "id": "C43",
+          "title": "Creating and accessing lists",
+          "difficulty": 3,
+          "prerequisite_ids": ["C03","C05"],
+          "mastery_definition": "Kid can create a list, access items by index, and understand 0-based indexing",
+          "analogies": [
+            {"id":"A1","text":"A list is like a row of lockers. Each locker has a number starting from 0. Locker 0 is the first one, locker 1 is second, and so on. You access what's inside by its locker number.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"fruits = [\"apple\",\"banana\",\"cherry\"]\nprint(fruits[0])","question":"What does this print?","options":["apple","banana","cherry","1"],"answer":"apple","explanation":"Lists start at index 0. fruits[0] is the first item — apple."},
+            {"type":"predict","code":"nums = [10, 20, 30, 40]\nprint(nums[-1])","question":"What does this print?","options":["10","40","Error","-1"],"answer":"40","explanation":"Negative indexes count from the end. -1 is always the last item — 40."},
+            {"type":"fill_blank","code":"colors = [\"red\",\"green\",\"blue\"]\nprint(colors[___])","question":"Fill in the index to print 'blue'.","answer":"2","explanation":"red is at index 0, green at 1, blue at 2."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C44",
+          "title": "List methods — append, remove, len",
+          "difficulty": 3,
+          "prerequisite_ids": ["C43"],
+          "mastery_definition": "Kid can add to and remove from a list and get its length",
+          "analogies": [
+            {"id":"A1","text":"append() is like adding a new locker at the end of the row. remove() is like emptying one specific locker and closing it. len() counts how many lockers there are.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"items = [\"a\",\"b\",\"c\"]\nitems.append(\"d\")\nprint(items)","question":"What does this print?","options":["['a','b','c']","['a','b','c','d']","['d','a','b','c']","Error"],"answer":"['a','b','c','d']","explanation":"append() adds the item to the END of the list."},
+            {"type":"predict","code":"nums = [1, 2, 3, 4]\nnums.remove(2)\nprint(nums)","question":"What does this print?","options":["[1,3,4]","[1,2,4]","[2,3,4]","[1,2,3]"],"answer":"[1,3,4]","explanation":"remove(2) finds the value 2 in the list and removes it."},
+            {"type":"write","question":"Create a list of 3 of your favorite movies. Add a 4th movie using append. Print the length.","sample_answer":"movies = [\"Movie1\",\"Movie2\",\"Movie3\"]\nmovies.append(\"Movie4\")\nprint(len(movies))","check":"contains .append( and len(","explanation":"Create the list, append one more, then len() gives you the count."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C45",
+          "title": "Iterating over lists with for",
+          "difficulty": 3,
+          "prerequisite_ids": ["C43","C28"],
+          "mastery_definition": "Kid can loop through a list using for and process each item",
+          "analogies": [
+            {"id":"A1","text":"Iterating a list is like going through your playlist. For each song, you listen to it. The for loop goes through each item the same way — one at a time.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"scores = [85, 90, 78]\nfor score in scores:\n    print(score + 5)","question":"What does this print?","options":["85 90 78","90 95 83","85 90 78 +5","Error"],"answer":"90 95 83","explanation":"Each score gets 5 added to it. 85+5=90, 90+5=95, 78+5=83."},
+            {"type":"write","question":"Write code that prints only the items in this list that are greater than 10: [5, 15, 3, 20, 8]","sample_answer":"nums = [5,15,3,20,8]\nfor n in nums:\n    if n > 10:\n        print(n)","check":"contains for and if and > 10","explanation":"Loop through the list, check each item with if n > 10, print it if it passes."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C46",
+          "title": "List slicing",
+          "difficulty": 4,
+          "prerequisite_ids": ["C43"],
+          "mastery_definition": "Kid can use slicing to get a portion of a list",
+          "analogies": [
+            {"id":"A1","text":"Slicing is like cutting a sandwich. You say 'give me from slice 1 to slice 3' and you get that portion. The original sandwich stays whole.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"letters = ['a','b','c','d','e']\nprint(letters[1:4])","question":"What does this print?","options":["['a','b','c']","['b','c','d']","['b','c','d','e']","['a','b','c','d']"],"answer":"['b','c','d']","explanation":"[1:4] starts at index 1 (b) and goes up to but not including index 4 (e). So b,c,d."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C47",
+          "title": "Dictionaries — key-value pairs",
+          "difficulty": 4,
+          "prerequisite_ids": ["C43"],
+          "mastery_definition": "Kid can create a dictionary, access values by key, and add new pairs",
+          "analogies": [
+            {"id":"A1","text":"A dictionary is like a real dictionary. You look up a word (key) to find its meaning (value). In Python, keys can be names and values can be anything — numbers, text, lists.","success_rate":0},
+            {"id":"A2","text":"Think of a dictionary like a contact list. The name is the key. The phone number is the value. You look up the name to get the number.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"person = {\"name\":\"Aria\",\"age\":11}\nprint(person[\"name\"])","question":"What does this print?","options":["name","Aria","{'name':'Aria','age':11}","Error"],"answer":"Aria","explanation":"person[\"name\"] looks up the key \"name\" and returns its value \"Aria\"."},
+            {"type":"fill_blank","code":"scores = {\"math\":95,\"english\":88}\nprint(scores[___])","question":"Fill in the key to print 88.","answer":"\"english\"","explanation":"The key for 88 is \"english\". Use the key in square brackets to access the value."},
+            {"type":"write","question":"Create a dictionary about your favorite animal with keys: name, sound, legs. Print each value.","sample_answer":"animal = {\"name\":\"dog\",\"sound\":\"bark\",\"legs\":4}\nprint(animal[\"name\"])\nprint(animal[\"sound\"])\nprint(animal[\"legs\"])","check":"contains { and : and [\"","explanation":"Create the dict with { }, then access each value with its key in square brackets."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C48",
+          "title": "Mini Project 6 — Student Grade Book",
+          "difficulty": 4,
+          "prerequisite_ids": ["C43","C44","C45","C46","C47"],
+          "mastery_definition": "Kid builds a grade book using lists and dictionaries",
+          "analogies": [],
+          "questions": [],
+          "mini_project": {
+            "title": "Student Grade Book",
+            "description": "Build a grade book that stores student names and their scores, calculates averages, and finds the top scorer.",
+            "sample_solution": "students = {\n    \"Aria\": [90, 85, 92],\n    \"Sam\": [78, 82, 80],\n    \"Lee\": [95, 98, 91]\n}\n\nprint(\"=== Grade Book ===\")\nfor name, scores in students.items():\n    average = sum(scores) / len(scores)\n    print(f\"{name}: avg = {average:.1f}\")\n\ntop = max(students, key=lambda x: sum(students[x]))\nprint(f\"\\nTop student: {top}\")",
+            "what_they_practice":["dictionaries","lists","loops","functions","f-strings"],
+            "success_criteria":"Stores multiple students, calculates average, identifies top scorer"
+          }
+        }
+      ]
+    },
+    {
+      "module_id": "M7",
+      "module_title": "Putting It All Together",
+      "concepts": [
+        {
+          "id": "C49",
+          "title": "Importing modules — random and math",
+          "difficulty": 3,
+          "prerequisite_ids": ["C35"],
+          "mastery_definition": "Kid can import random and math and use at least 2 functions from each",
+          "analogies": [
+            {"id":"A1","text":"Modules are like toolboxes. Python comes with many toolboxes already packed — random, math, time. import opens a toolbox so you can use the tools inside.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"import random\nprint(random.randint(1, 6))","question":"What could this print?","options":["Always 1","A number between 1 and 6","A number between 0 and 6","Error"],"answer":"A number between 1 and 6","explanation":"random.randint(1,6) gives a random whole number from 1 to 6, like rolling a die."},
+            {"type":"predict","code":"import math\nprint(math.sqrt(16))","question":"What does this print?","options":["4","4.0","16","Error"],"answer":"4.0","explanation":"math.sqrt() gives the square root. Square root of 16 is 4.0 (returned as a float)."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C50",
+          "title": "Error types and reading error messages",
+          "difficulty": 3,
+          "prerequisite_ids": ["C19","C36"],
+          "mastery_definition": "Kid can identify SyntaxError, NameError, and TypeError from error messages",
+          "analogies": [
+            {"id":"A1","text":"Error messages are like GPS re-routing. When something goes wrong, Python tells you what happened and where. It's not criticizing you — it's helping you find the right path.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"explain","question":"You see 'NameError: name x is not defined'. What does this mean?","options":["x has the wrong value","x was used before being created","x is a reserved word","The function x is missing"],"answer":"x was used before being created","explanation":"NameError means Python can't find that variable. Either you forgot to create it, or you spelled it differently."},
+            {"type":"explain","question":"You see 'TypeError: can only concatenate str (not int) to str'. What caused this?","options":["A function is missing","You tried to join a string and a number with +","The string is too long","A variable is undefined"],"answer":"You tried to join a string and a number with +","explanation":"You can't use + to join a string and a number directly. Convert the number to a string with str() first."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C51",
+          "title": "try / except — handling errors gracefully",
+          "difficulty": 4,
+          "prerequisite_ids": ["C50","C19"],
+          "mastery_definition": "Kid can wrap risky code in try/except to prevent crashes",
+          "analogies": [
+            {"id":"A1","text":"try/except is like a safety net under a trapeze artist. The artist tries the move (try). If they fall, the net catches them (except). The show goes on.","success_rate":0}
+          ],
+          "questions": [
+            {"type":"predict","code":"try:\n    num = int(input(\"Enter a number: \"))\n    print(num * 2)\nexcept:\n    print(\"That's not a number!\")","question":"If the user types 'hello', what prints?","options":["0","hello * 2","That's not a number!","Error"],"answer":"That's not a number!","explanation":"int('hello') would normally crash. But try/except catches the error and runs the except block instead."}
+          ],
+          "mini_project": null
+        },
+        {
+          "id": "C52",
+          "title": "Final Project — Personal Assistant Chatbot",
+          "difficulty": 5,
+          "prerequisite_ids": ["C49","C50","C51"],
+          "mastery_definition": "Kid builds a complete interactive program using all concepts from the course",
+          "analogies": [],
+          "questions": [],
+          "mini_project": {
+            "title": "Personal Assistant Chatbot",
+            "description": "Build a text-based personal assistant that can: tell a joke, do math, generate a random number, tell the time, and respond to your name. Use a loop so it keeps running until you say 'quit'.",
+            "sample_solution": "import random\nimport math\nimport datetime\n\ndef tell_joke():\n    jokes = [\n        \"Why do programmers prefer dark mode? Because light attracts bugs!\",\n        \"Why did the Python programmer wear glasses? Because they couldn't C!\",\n        \"What do you call a sleeping dinosaur? A dino-snore!\"\n    ]\n    return random.choice(jokes)\n\ndef do_math(expression):\n    try:\n        result = eval(expression)\n        return f\"The answer is {result}\"\n    except:\n        return \"I couldn't calculate that.\"\n\ndef get_time():\n    now = datetime.datetime.now()\n    return f\"It is {now.strftime('%H:%M')} right now.\"\n\nname = input(\"Hi! What's your name? \")\nprint(f\"Nice to meet you, {name}! I'm your Python assistant.\")\nprint(\"Commands: joke, math, random, time, quit\")\n\nwhile True:\n    command = input(f\"\\n{name}: \").lower()\n    if command == \"quit\":\n        print(f\"Goodbye, {name}! Keep coding!\")\n        break\n    elif command == \"joke\":\n        print(tell_joke())\n    elif command == \"math\":\n        expr = input(\"Enter a math expression: \")\n        print(do_math(expr))\n    elif command == \"random\":\n        print(f\"Your lucky number is {random.randint(1, 100)}!\")\n    elif command == \"time\":\n        print(get_time())\n    else:\n        print(\"I don't know that command yet. Try: joke, math, random, time, quit\")",
+            "what_they_practice":["all 7 modules","functions","loops","dictionaries","error handling","imports","f-strings"],
+            "success_criteria":"Program loops, responds to at least 4 commands, handles unknown input, exits cleanly"
+          }
+        }
+      ]
+    }
+  ]
+}

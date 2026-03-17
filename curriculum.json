@@ -1,0 +1,53 @@
+{
+  "course": "Python Basics",
+  "target_ages": ["9-12", "13+"],
+  "total_concepts": 52,
+  "estimated_days": {
+    "daily_practice": 45,
+    "every_other_day": 90
+  },
+  "modules": [
+    {
+      "id": "M1",
+      "title": "Getting Started with Python",
+      "concepts": 8,
+      "concept_ids": ["C01","C02","C03","C04","C05","C06","C07","C08"]
+    },
+    {
+      "id": "M2",
+      "title": "Working with Data",
+      "concepts": 10,
+      "concept_ids": ["C09","C10","C11","C12","C13","C14","C15","C16","C17","C18"]
+    },
+    {
+      "id": "M3",
+      "title": "Making Decisions",
+      "concepts": 8,
+      "concept_ids": ["C19","C20","C21","C22","C23","C24","C25","C26"]
+    },
+    {
+      "id": "M4",
+      "title": "Loops and Repetition",
+      "concepts": 8,
+      "concept_ids": ["C27","C28","C29","C30","C31","C32","C33","C34"]
+    },
+    {
+      "id": "M5",
+      "title": "Functions",
+      "concepts": 8,
+      "concept_ids": ["C35","C36","C37","C38","C39","C40","C41","C42"]
+    },
+    {
+      "id": "M6",
+      "title": "Lists and Collections",
+      "concepts": 6,
+      "concept_ids": ["C43","C44","C45","C46","C47","C48"]
+    },
+    {
+      "id": "M7",
+      "title": "Putting It All Together",
+      "concepts": 4,
+      "concept_ids": ["C49","C50","C51","C52"]
+    }
+  ]
+}
